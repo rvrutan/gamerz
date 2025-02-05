@@ -1,8 +1,8 @@
-import { GameAttributes } from '../seeds/game-seeds.ts';
+import { Game } from '../models/games.js';
 
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('games', [
+export const seedGames = async () => {
+  await Game.bulkCreate(
+    [
       {
         slug: 'the-witcher-3-wild-hunt',
         name: 'The Witcher 3: Wild Hunt',
@@ -15,8 +15,6 @@ module.exports = {
         playtime: 100,
         suggestions_count: 15,
         updated: new Date(),
-        createdAt: new Date(),
-        updatedAt: new Date(),
       },
       {
         slug: 'red-dead-redemption-2',
@@ -30,8 +28,6 @@ module.exports = {
         playtime: 80,
         suggestions_count: 20,
         updated: new Date(),
-        createdAt: new Date(),
-        updatedAt: new Date(),
       },
       {
         slug: 'the-legend-of-zelda-breath-of-the-wild',
@@ -45,8 +41,6 @@ module.exports = {
         playtime: 60,
         suggestions_count: 12,
         updated: new Date(),
-        createdAt: new Date(),
-        updatedAt: new Date(),
       },
       {
         slug: 'cyberpunk-2077',
@@ -60,8 +54,6 @@ module.exports = {
         playtime: 40,
         suggestions_count: 30,
         updated: new Date(),
-        createdAt: new Date(),
-        updatedAt: new Date(),
       },
       {
         slug: 'grand-theft-auto-v',
@@ -75,8 +67,6 @@ module.exports = {
         playtime: 50,
         suggestions_count: 18,
         updated: new Date(),
-        createdAt: new Date(),
-        updatedAt: new Date(),
       },
       {
         slug: 'god-of-war',
@@ -90,8 +80,6 @@ module.exports = {
         playtime: 40,
         suggestions_count: 22,
         updated: new Date(),
-        createdAt: new Date(),
-        updatedAt: new Date(),
       },
       {
         slug: 'hades',
@@ -105,8 +93,6 @@ module.exports = {
         playtime: 35,
         suggestions_count: 25,
         updated: new Date(),
-        createdAt: new Date(),
-        updatedAt: new Date(),
       },
       {
         slug: 'dark-souls-iii',
@@ -120,8 +106,6 @@ module.exports = {
         playtime: 45,
         suggestions_count: 13,
         updated: new Date(),
-        createdAt: new Date(),
-        updatedAt: new Date(),
       },
       {
         slug: 'animal-crossing-new-horizons',
@@ -135,8 +119,6 @@ module.exports = {
         playtime: 50,
         suggestions_count: 10,
         updated: new Date(),
-        createdAt: new Date(),
-        updatedAt: new Date(),
       },
       {
         slug: 'doom-eternal',
@@ -150,13 +132,8 @@ module.exports = {
         playtime: 20,
         suggestions_count: 15,
         updated: new Date(),
-        createdAt: new Date(),
-        updatedAt: new Date(),
       },
-    ]);
-  },
-
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('games', null, {});
-  },
+    ],
+    { individualHooks: true }
+  );
 };
