@@ -5,9 +5,14 @@ export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage user login state
   const navigate = useNavigate();
 
+  const handleLogin = () => {
+    setIsLoggedIn(true); // Simulate login
+    navigate('/my-games'); // Redirect to My Games after login
+  };
+
   const handleLogout = () => {
-    setIsLoggedIn(false); // Add your logout logic here
-    navigate('/login');
+    setIsLoggedIn(false); // Simulate logout
+    navigate('/login'); // Redirect to login page
   };
 
   return (
@@ -18,29 +23,32 @@ export default function Navbar() {
 
       <div className="flex gap-2">
         <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
-        <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img
-                alt="User Avatar"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-              />
+        
+        {isLoggedIn ? (
+          <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img
+                  alt="User Avatar"
+                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                />
+              </div>
             </div>
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
-          >
-            <li><Link to="/my-games">My Games</Link></li>
-            <li><Link to="/wishlist">Wishlist</Link></li>
-            <li><Link to="/about">About</Link></li>
-            {isLoggedIn ? (
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+            >
+              <li><Link to="/my-games">My Games</Link></li>
+              <li><Link to="/wishlist">Wishlist</Link></li>
+              <li><Link to="/about">About</Link></li>
               <li><a onClick={handleLogout}>Logout</a></li>
-            ) : (
-              <li><Link to="/login">Login</Link></li>
-            )}
-          </ul>
-        </div>
+            </ul>
+          </div>
+        ) : (
+          <button onClick={handleLogin} className="btn btn-primary">
+            Login
+          </button>
+        )}
       </div>
     </div>
   );
