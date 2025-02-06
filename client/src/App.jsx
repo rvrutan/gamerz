@@ -1,57 +1,31 @@
-import { useState } from 'react'
-import './App.css'
-import Footer from './components/Footer';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import MyGames from './pages/MyGames';
+import Wishlist from './pages/Wishlist.jsx';
+import About from './pages/About';
+import Footer from './components/Footer';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  return (
-    <>
-    <div>
-      <Navbar />
-      <Footer />
-    </div>
-   
-{/* const LandingPage = () => (
-  <div>
-    <Navbar isLoggedIn={false} />
-    <h2 className="text-center text-2xl my-4">Most Anticipated Releases</h2>
-    <div className="grid grid-cols-3 gap-4 p-4">
-      {[...Array(6)].map((_, index) => (
-        <div key={index} className="box p-4 border rounded shadow">Game {index + 1}</div>
-      ))}
-    </div>
-    <Footer />
-  </div>
-);
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    // Implement logout logic here
+  };
 
-const MainPage = () => (
-  <div>
-    <Navbar isLoggedIn={true} />
-    <div className="grid grid-cols-3 gap-4 p-4">
-      {[...Array(6)].map((_, index) => (
-        <div key={index} className="box p-4 border rounded shadow">Game {index + 1}</div>
-      ))}
-    </div>
-    <Footer />
-  </div>
-);
-
-const App = () => {
   return (
     <Router>
+      <Navbar isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/main" element={<MainPage />} />
+        <Route path="/my-games" element={<MyGames />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/about" element={<About />} />
+        {/* Add Login route and page */}
       </Routes>
+      <Footer />
     </Router>
   );
-};
- */}
-
-    </>
-  )
 }
 
 export default App;
