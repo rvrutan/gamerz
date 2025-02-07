@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { Game } from '../../models/games';
+import { Game } from '../../models/index.js';
 
 const router = Router();
 
 // GET all games
-router.get('/', async (req, res) => {
+router.get('/', async (_req, res) => {
   try {
     const games = await Game.findAll();
     res.status(200).json(games);
@@ -23,4 +23,4 @@ router.post('/', async (req, res) => {
   }
 });
 
-export default router;
+export { router as gameRouter };
