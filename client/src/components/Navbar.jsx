@@ -16,9 +16,9 @@ export default function Navbar() {
   };
 
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-300 shadow-sm">
       <div className="flex-1">
-        <Link to="/" className="btn btn-ghost text-xl">GAMERZ</Link>
+        <Link to="/" className="btn btn-ghost text-4xl">GAMERZ</Link>
       </div>
 
       <div className="flex gap-2">
@@ -38,7 +38,7 @@ export default function Navbar() {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
             >
-              <li><Link to="/my-games">My Games</Link></li>
+              {/* <li><Link to="/my-games">My Games</Link></li> */}
               <li><Link to="/wishlist">Wishlist</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><a onClick={handleLogout}>Logout</a></li>
