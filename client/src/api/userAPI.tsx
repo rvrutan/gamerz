@@ -21,7 +21,4 @@ const retrieveUsers = async () => {
   }
 };
 
-// create a post request
-
-
 export { retrieveUsers };
