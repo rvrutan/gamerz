@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import MyGames from './pages/MyGames';
 import Wishlist from './pages/Wishlist.jsx';
 import About from './pages/About';
 import Footer from './components/Footer';
+import MyGames from './pages/Mygames';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -15,6 +15,7 @@ function App() {
   };
 
   return (
+    <div data-theme="synthwave" className='font-sans'>
     <Router>
       <Navbar isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
       <Routes>
@@ -25,6 +26,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+    </div>
   );
 }
 

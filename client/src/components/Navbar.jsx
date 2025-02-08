@@ -18,12 +18,18 @@ export default function Navbar() {
   return (
     <div className="navbar bg-base-300 shadow-sm">
       <div className="flex-1">
-        <Link to="/" className="btn btn-ghost text-4xl">GAMERZ</Link>
+        <Link to="/" className="btn btn-ghost text-4xl text-center">
+          GAMERZ
+        </Link>
       </div>
 
-      <div className="flex gap-2">
-        <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
-        
+      <div className="flex gap-2 items-center">
+        <input
+          type="text"
+          placeholder="Search"
+          className="input input-secondary w-full md:w-auto"
+        />
+
         {isLoggedIn ? (
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -36,9 +42,9 @@ export default function Navbar() {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+              className="menu text-4xl menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
             >
-              {/* <li><Link to="/my-games">My Games</Link></li> */}
+              <li><Link to="/my-games">My Games</Link></li>
               <li><Link to="/wishlist">Wishlist</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><a onClick={handleLogout}>Logout</a></li>
