@@ -36,7 +36,7 @@ export default function Navbar() {
               <div className="w-10 rounded-full">
                 <img
                   alt="User Avatar"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                  src="https://png.pngtree.com/element_our/20200610/ourmid/pngtree-character-default-avatar-image_2237203.jpg"
                 />
               </div>
             </div>
@@ -44,10 +44,10 @@ export default function Navbar() {
               tabIndex={0}
               className="menu text-4xl menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
             >
-              <li><Link to="/my-games">My Games</Link></li>
-              <li><Link to="/wishlist">Wishlist</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><a onClick={handleLogout}>Logout</a></li>
+              <li><Link to="/my-games" className="text-xl" >My Games</Link> </li>
+              <li><Link to="/wishlist" className="text-xl" >Wishlist</Link></li>
+              <li><Link to="/about" className="text-xl" >About</Link></li>
+              <li><a onClick={handleLogout} className="text-xl" >Logout</a></li>
             </ul>
           </div>
         ) : (
