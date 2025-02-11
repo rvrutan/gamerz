@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../utils/auth';
 
 export default function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // Manage user login state
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage user login state
   const navigate = useNavigate();
 
   const checkLogin = () => {
