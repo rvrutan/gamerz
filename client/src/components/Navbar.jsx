@@ -43,7 +43,7 @@ export default function Navbar() {
               <div className="w-10 rounded-full">
                 <img
                   alt="User Avatar"
-                  src="https://png.pngtree.com/element_our/20200610/ourmid/pngtree-character-default-avatar-image_2237203.jpg"
+                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                 />
               </div>
             </div>
