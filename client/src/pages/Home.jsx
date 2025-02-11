@@ -9,7 +9,7 @@ export default function Home() {
     const fetchGameList = async () => {
       const fetchedGames = await fetchGames();
       // Optionally, limit the number of games to display on the homepage
-      setGames(fetchedGames.slice(0, 4)); // Display only the first 4 games
+      setGames(fetchedGames.slice(0, 6));
     };
     fetchGameList();
   }, []);
