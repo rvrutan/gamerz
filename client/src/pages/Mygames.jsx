@@ -6,13 +6,6 @@ import cyberpunkImg from "../../public/cyberpunk.jpeg";
 import rdr2Img from "../../public/rdr2.jpeg"
 
 export default function MyGames() {
-  // return (
-  //   <div className="p-4 flex flex-col items-center text-center">
-  //     <h1 className="text-3xl font-bold mb-4">My Games</h1>
-  //     <p className="text-lg">This is where we are showing games</p>
-  //     {/* List of saved games will be displayed here */}
-  //   </div>
-  // );
     // State to store the games
     const [games, setGames] = useState([
       {
@@ -61,7 +54,6 @@ export default function MyGames() {
       <div className="p-4 flex flex-col items-center text-center">
         <h1 className="text-3xl font-bold mb-4">My Games</h1>
         <p className="text-lg mb-4">Here are some of the games I love playing:</p>
-  
         {/* Grid to display the games */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {games.map((game) => (
