@@ -12,13 +12,13 @@ export default defineConfig({
     proxy: {
       "/api": {
         //test local http://localhost:3001
-        target: "https://gamerz.onrender.com/",
+        target: "https://gamerz.onrender.com",
         changeOrigin: true,
         secure: false,
       },
       "/auth": {
         //test local http://localhost:3001
-        target: "https://gamerz.onrender.com/",
+        target: "https://gamerz.onrender.com",
         changeOrigin: true,
         secure: false,
       },
