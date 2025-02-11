@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   server: {
+    // allowedHosts: ['gamerz-client.onrender.com'],
     host: '0.0.0.0',
     port: 3001,
     open: true,
@@ -25,4 +26,9 @@ export default defineConfig({
   },
   plugins: [tailwindcss(),
     react()],
+    preview: {
+      host: true,
+      port: 3000
+    }
+  
 })
