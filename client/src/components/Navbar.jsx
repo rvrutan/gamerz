@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage user login state
+  const [isLoggedIn, setIsLoggedIn] = useState(true); // Manage user login state
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    setIsLoggedIn(true); // Simulate login
-    navigate('/my-games'); // Redirect to My Games after login
+    navigate('/login'); // Redirect to Login page
   };
 
   const handleLogout = () => {
@@ -44,13 +43,13 @@ export default function Navbar() {
               tabIndex={0}
               className="menu text-4xl menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
             >
-              <li><Link to="/my-games" className="text-xl" >My Games</Link> </li>
-              <li><Link to="/wishlist" className="text-xl" >Wishlist</Link></li>
-              <li><Link to="/about" className="text-xl" >About</Link></li>
-              <li><a onClick={handleLogout} className="text-xl" >Logout</a></li>
+              <li><Link to="/my-games" className="text-xl">My Games</Link></li>
+              <li><Link to="/wishlist" className="text-xl">Wishlist</Link></li>
+              <li><Link to="/about" className="text-xl">About</Link></li>
+              <li><a onClick={handleLogout} className="text-xl">Logout</a></li>
             </ul>
           </div>
-        ) : (
+        ) : ( 
           <button onClick={handleLogin} className="btn btn-primary">
             Login
           </button>

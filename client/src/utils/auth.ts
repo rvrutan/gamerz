@@ -1,10 +1,10 @@
 
 import { type JwtPayload, jwtDecode } from 'jwt-decode';
-import type { UserData } from '../interface/UserLogin.tsx';
+import type { UserLogin } from '../interface/UserLogin.tsx';
 
 class AuthService {
   getProfile() {
-    return jwtDecode<UserData>(this.getToken());
+    return jwtDecode<UserLogin>(this.getToken());
   }
 
   loggedIn() {
@@ -31,12 +31,12 @@ class AuthService {
 
   login(idToken: string) {
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/');
+    window.location.assign('/my-games');
   }
 
   logout() {
     localStorage.removeItem('id_token');
-    window.location.assign('/');
+    window.location.assign('/login');
   }
 }
 

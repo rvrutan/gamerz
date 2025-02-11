@@ -5,6 +5,7 @@ import Wishlist from './pages/Wishlist.jsx';
 import About from './pages/About';
 import Footer from './components/Footer';
 import MyGames from './pages/Mygames';
+import Login from './pages/Login';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,6 +23,7 @@ function App() {
         <Route path="/my-games" element={<MyGames />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
         {/* Add Login route and page */}
       </Routes>
       <Footer />
