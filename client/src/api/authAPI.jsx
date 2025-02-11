@@ -1,4 +1,5 @@
 const login = async (userInfo) => {
+  console.log(userInfo)
   try {
     const response = await fetch('/auth/login', {
       method: 'POST',
