@@ -1,18 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import auth from '../utils/auth';
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage user login state
   const navigate = useNavigate();
 
+  const checkLogin = () => {
+    if (auth.loggedIn()) {
+      setIsLoggedIn(true);
+    }
+  };
+
+  useEffect(() => {
+    console.log(isLoggedIn);
+    checkLogin();
+  }, [isLoggedIn]);
+
   const handleLogin = () => {
     navigate('/login'); // Redirect to Login page
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false); // Simulate logout
-    navigate('/login'); // Redirect to login page
-  };
 
   return (
     <div className="navbar bg-base-300 shadow-sm">
@@ -46,7 +54,7 @@ export default function Navbar() {
               <li><Link to="/my-games" className="text-xl">My Games</Link></li>
               <li><Link to="/wishlist" className="text-xl">Wishlist</Link></li>
               <li><Link to="/about" className="text-xl">About</Link></li>
-              <li><a onClick={handleLogout} className="text-xl">Logout</a></li>
+              <li><a onClick={() => { auth.logout()}} className="text-xl">Logout</a></li>
             </ul>
           </div>
         ) : ( 
